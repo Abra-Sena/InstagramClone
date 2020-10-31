@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
-        android:id="@+id/itHome"
+        android:id="@+id/action_home"
         android:enabled="true"
         android:icon="@drawable/ic_action_home"
-        android:title="@string/home"/>
+        android:title="@string/home"
+        app:showAsAction="always" />
 
     <item
-        android:id="@+id/itHeart"
-        android:enabled="true"
-        android:icon="@drawable/ic_action_heart"
-        android:title="@string/heart"/>
-
-    <item
-        android:id="@+id/itPost"
+        android:id="@+id/action_compose"
         android:enabled="true"
         android:icon="@drawable/ic_action_new_post"
-        android:title="@string/new_post"/>
+        android:title="@string/new_post"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/ic_action_user"
+        android:title="Profile"
+        app:showAsAction="always" />
 
-<!--    <item-->
-<!--        android:id="@+id/itUser"-->
-<!--        android:enabled="true"-->
-<!--        android:icon="@drawable/ic_action_user"-->
-<!--        android:title="@string/user"/>-->
 </menu>
