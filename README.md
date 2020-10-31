@@ -40,13 +40,15 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/uVRWTUx.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co).
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+- I followed guides from previous project but i was not able to figure out how to show the timestamp of ech post. The database has the time each post is created saved but i keep getting a null string and all debugging didn't help resolve the issue. I also reached to the help channel but I was encouraged to do more problem solving which didn't help. I spent a lot of time on that eature and was not able to do the others.
 
 ## Open-source libraries used
 
