@@ -22,14 +22,17 @@ public class TimeFormatter {
             long diff = (System.currentTimeMillis() - format.parse(rawJsonDate).getTime()) / 1000;
             if (diff < 5)
                 time = "Just now";
-            else if (diff < 60)
+            else if (diff < 60) //less than a minute
                 time = String.format(Locale.ENGLISH, "%ds",diff);
-            else if (diff < 60 * 60)
+            else if (diff < 60 * 60) // less than an hour
                 time = String.format(Locale.ENGLISH, "%dm", diff / 60);
-            else if (diff < 60 * 60 * 24)
+            else if (diff < 60 * 60 * 24) // less than a day
                 time = String.format(Locale.ENGLISH, "%dh", diff / (60 * 60));
-            else if (diff < 60 * 60 * 24 * 30)
+            else if (diff < 60 * 60 * 24 * 7) //less than a week
                 time = String.format(Locale.ENGLISH, "%dd", diff / (60 * 60 * 24));
+            else if (diff < 60 * 60 * 24 * 30) //greater than a week
+//                time = String.format(Locale.ENGLISH, "%dd", diff / (60 * 60 * 24));
+                time = getTimeStamp(rawJsonDate);
             else {
                 Calendar now = Calendar.getInstance();
                 Calendar then = Calendar.getInstance();
@@ -46,6 +49,7 @@ public class TimeFormatter {
         }  catch (ParseException e) {
             e.printStackTrace();
         }
+
         return time;
     }
 
@@ -64,7 +68,7 @@ public class TimeFormatter {
             then.setTime(format.parse(rawJsonDate));
             Date date = then.getTime();
 
-            SimpleDateFormat format1 = new SimpleDateFormat("h:mm a \u00b7 dd MMM yy");
+            SimpleDateFormat format1 = new SimpleDateFormat("MMM dd");
 
             time = format1.format(date);
 
@@ -73,4 +77,5 @@ public class TimeFormatter {
         }
         return time;
     }
+    //use a hashmap to get the full month
 }

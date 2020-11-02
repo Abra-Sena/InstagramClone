@@ -57,6 +57,8 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         private ImageView ivImage;
         private TextView tvDescription;
         private TextView tvCreatedAt;
+        public String formattedTime;
+
 //        private RelativeLayout rlPost;
 
         public ViewHolder(@NonNull View itemView) {
@@ -74,6 +76,8 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 //            tvCreatedAt.setText(post.getFormattedTimestamp());
             tvUsername.setText(post.getUser().getUsername());
 
+            tvCreatedAt.setText(getFormattedTimestamp(post));
+
             //check if the post has all the elements
             ParseFile image = post.getImage();
             if (image != null) {
@@ -89,6 +93,12 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
                     context.startActivity(intent);
                 }
             });
+        }
+
+
+        public String getFormattedTimestamp(Post post) {
+            formattedTime = TimeFormatter.getTimeDifference(post.getCreatedAt().toString());
+            return formattedTime;
         }
     }
 }

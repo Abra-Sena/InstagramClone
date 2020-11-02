@@ -19,12 +19,9 @@ public class Post extends ParseObject {
     public static final String KEY_USER = "user";
     public static final String KEY_CREATED_AT = "createdAt";
     public String formattedTime;
-    public String fullTime;
 
     //needed for Parcel
-    public Post() {
-
-    }
+    public Post() { }
 
     public String getDescription() {
         return getString(KEY_DESCRIPTION);
@@ -54,12 +51,9 @@ public class Post extends ParseObject {
         put(KEY_USER, user);
     }
 
-    public String getFormattedTimestamp() {
-        formattedTime = TimeFormatter.getTimeDifference(getKeyCreatedAt());
-        return formattedTime;
-    }
-    public String getFullTimestamp() {
-        fullTime = TimeFormatter.getTimeStamp(getKeyCreatedAt());
-        return fullTime;
-    }
+//    public String getFormattedTimestamp() {
+//        formattedTime = TimeFormatter.getTimeDifference(getKeyCreatedAt());
+//        return formattedTime;
+//    }
+
 }
